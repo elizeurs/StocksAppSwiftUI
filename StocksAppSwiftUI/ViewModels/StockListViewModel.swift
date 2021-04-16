@@ -11,4 +11,19 @@ class StockListViewModel {
   
   var searchTerm: String = ""
   var stocks: [StockViewModel] = [StockViewModel]()
+  
+  func load() {
+
+  }
+  
+  private func fetchStocks() {
+    
+    Webservice().getStocks { stocks in
+      if let stocks = stocks {
+        DispatchQueue.main.async {
+          self.stocks = stocks.map(StockViewModel.init)
+        }
+      }
+    }
+  }
 }
