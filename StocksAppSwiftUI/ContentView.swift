@@ -23,22 +23,26 @@ struct ContentView: View {
     return NavigationView {
       //      let filteredStocks = searchTerm.isEmpty ? self.stocks : self.stocks.filter { $0.symbol.starts(with: searchTerm) }
       
-      VStack {
+      ZStack(alignment: .leading) {
         
-        HStack {
           Text("April 19 2021")
             .font(.title)
             .foregroundColor(.gray)
-          
-          Spacer()
-          
-        }.padding()
+            .padding()
+            .offset(y: -350)
+        
         
         SearchView(searchTerm: self.$stockListVM.searchTerm)
+          .offset(y: -300)
+
         
         StockListView(stocks: filteredStocks)
+          .offset(y: 200)
+
+        NewsArticleView(newsArticles: self.stockListVM.news)
+          .offset(y: 500)
+          .navigationBarTitle("Stocks", displayMode: .large)
       }
-      .navigationBarTitle("StocksTest", displayMode: .large)
     }
   }
 }
