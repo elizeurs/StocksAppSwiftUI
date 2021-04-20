@@ -20,6 +20,7 @@
 		75C35E56262CFE2200B682D2 /* StocksTestCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C35E55262CFE2200B682D2 /* StocksTestCellView.swift */; };
 		75C35E5A262D093800B682D2 /* StockTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C35E59262D093800B682D2 /* StockTestListView.swift */; };
 		75DFF312262E1CDE003F7EB9 /* StockCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DFF311262E1CDE003F7EB9 /* StockCellView.swift */; };
+		75DFF315262E56DB003F7EB9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75DFF314262E56DB003F7EB9 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		75C35E55262CFE2200B682D2 /* StocksTestCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTestCellView.swift; sourceTree = "<group>"; };
 		75C35E59262D093800B682D2 /* StockTestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockTestListView.swift; sourceTree = "<group>"; };
 		75DFF311262E1CDE003F7EB9 /* StockCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCellView.swift; sourceTree = "<group>"; };
+		75DFF314262E56DB003F7EB9 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				750985822629FC1B0021A349 /* Stock.swift */,
+				75DFF314262E56DB003F7EB9 /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				75C35E5A262D093800B682D2 /* StockTestListView.swift in Sources */,
 				75C35E52262CA94C00B682D2 /* StockListView.swift in Sources */,
 				7509858B262A1BA40021A349 /* StockListViewModel.swift in Sources */,
+				75DFF315262E56DB003F7EB9 /* Article.swift in Sources */,
 				75098587262A19870021A349 /* StockViewModel.swift in Sources */,
 				7509858F262A50060021A349 /* SearchView.swift in Sources */,
 				75DFF312262E1CDE003F7EB9 /* StockCellView.swift in Sources */,
