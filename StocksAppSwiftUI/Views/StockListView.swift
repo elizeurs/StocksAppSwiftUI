@@ -9,30 +9,17 @@ import SwiftUI
 
 struct StockListView: View {
   
-  @State private var searchTerm: String = ""
+//  @State private var searchTerm: String = ""
   let stocks: [StockViewModel]
   
   var body: some View {
     
-    NavigationView {
       ZStack {
-        
-        //Nav Background Color
-//                Color.blue.ignoresSafeArea()
         
         ScrollView {
           VStack {
             
-            HStack {
-              Text("April 19 2021")
-                .font(.title)
-                .foregroundColor(.gray)
-              
-              Spacer()
-              
-            }.padding()
-            
-            SearchView(searchTerm: $searchTerm)
+//            SearchView(searchTerm: $searchTerm)
             
             ForEach(self.stocks, id: \.symbol) { stock in
               StockCellView(stock: stock)
@@ -41,14 +28,11 @@ struct StockListView: View {
             Spacer()
             
           }
-          .foregroundColor(.white)
         }.background(Color.black)
         .edgesIgnoringSafeArea(.bottom)
-        .navigationBarTitle("StocksTest", displayMode: .large)
       }
     }
   }
-}
 
 //struct StockCellView: View {
 //  

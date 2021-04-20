@@ -9,17 +9,38 @@ import SwiftUI
 
 struct ContentView: View {
   
-//  @State private var searchTerm: String = ""
   @ObservedObject private var stockListVM = StockListViewModel()
   
   init() {
     
     stockListVM.load()
   }
+  
+  var body: some View {
     
-    var body: some View {
-      StockListView(stocks: self.stockListVM.stocks)
+    let filteredStocks = self.stockListVM.searchTerm.isEmpty ? self.stockListVM.stocks : self.stockListVM.stocks.filter { $0.symbol.starts(with: self.stockListVM.searchTerm) }
+    
+    return NavigationView {
+      //      let filteredStocks = searchTerm.isEmpty ? self.stocks : self.stocks.filter { $0.symbol.starts(with: searchTerm) }
+      
+      VStack {
+        
+        HStack {
+          Text("April 19 2021")
+            .font(.title)
+            .foregroundColor(.gray)
+          
+          Spacer()
+          
+        }.padding()
+        
+        SearchView(searchTerm: self.$stockListVM.searchTerm)
+        
+        StockListView(stocks: filteredStocks)
+      }
+      .navigationBarTitle("StocksTest", displayMode: .large)
     }
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
