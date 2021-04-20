@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		7509858F262A50060021A349 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509858E262A50060021A349 /* SearchView.swift */; };
 		75541637262F21E800759B97 /* NewsArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75541636262F21E800759B97 /* NewsArticleViewModel.swift */; };
 		7554163A262F3E8800759B97 /* NewsArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75541639262F3E8800759B97 /* NewsArticleView.swift */; };
+		7554163E262F6ED700759B97 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 7554163D262F6ED700759B97 /* URLImage */; };
 		75C35E52262CA94C00B682D2 /* StockListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C35E51262CA94C00B682D2 /* StockListView.swift */; };
 		75C35E56262CFE2200B682D2 /* StocksTestCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C35E55262CFE2200B682D2 /* StocksTestCellView.swift */; };
 		75C35E5A262D093800B682D2 /* StockTestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C35E59262D093800B682D2 /* StockTestListView.swift */; };
@@ -51,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7554163E262F6ED700759B97 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +163,9 @@
 			dependencies = (
 			);
 			name = StocksAppSwiftUI;
+			packageProductDependencies = (
+				7554163D262F6ED700759B97 /* URLImage */,
+			);
 			productName = StocksAppSwiftUI;
 			productReference = 750985692629EE4D0021A349 /* StocksAppSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +193,9 @@
 				Base,
 			);
 			mainGroup = 750985602629EE4D0021A349;
+			packageReferences = (
+				7554163C262F6ED700759B97 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = 7509856A2629EE4D0021A349 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -416,6 +424,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7554163C262F6ED700759B97 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7554163D262F6ED700759B97 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7554163C262F6ED700759B97 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 750985612629EE4D0021A349 /* Project object */;
 }
