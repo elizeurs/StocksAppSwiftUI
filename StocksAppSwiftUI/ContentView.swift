@@ -25,22 +25,33 @@ struct ContentView: View {
       
       ZStack(alignment: .leading) {
         
-          Text("April 19 2021")
-            .font(.title)
-            .foregroundColor(.gray)
-            .padding()
-            .offset(y: -350)
+        Text("April 19 2021")
+          .font(.title)
+          .foregroundColor(.gray)
+          .padding()
+          .offset(y: -350)
         
         
         SearchView(searchTerm: self.$stockListVM.searchTerm)
           .offset(y: -300)
-
+        
         
         StockListView(stocks: filteredStocks)
           .offset(y: 200)
-
-        NewsArticleView(newsArticles: self.stockListVM.news)
-          .offset(y: 500)
+        
+        NewsArticleView(newsArticles: self.stockListVM.news,
+                        onDragBegin: { value in
+                          self.stockListVM.dragOffset = value.translation
+                        }, onDragEnd: { value in
+                          
+                          if value.translation.height < 0 {
+                            self.stockListVM.dragOffset = CGSize(width: 0, height: 100)
+                          } else {
+                            self.stockListVM.dragOffset = CGSize(width: 0, height: 750)
+                          }
+                        })
+          .animation(.spring())
+          .offset(y: self.stockListVM.dragOffset.height)
           .navigationBarTitle("Stocks", displayMode: .large)
       }
     }
